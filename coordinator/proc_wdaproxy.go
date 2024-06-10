@@ -47,7 +47,7 @@ func proc_wdaproxy( o ProcOptions, devEventCh chan<- DevEvent, temp bool ) {
         "-q", strconv.Itoa(8100),//o.config.WDAProxyPort),
         "-d",
         fmt.Sprintf("--iosDeploy=%s", config.BinPaths.IosDeploy),
-        fmt.Sprintf("--mobileDevice=%s", "/usr/local/bin/mobiledevice"),
+        fmt.Sprintf("--mobileDevice=%s", "/opt/homebrew/bin/mobiledevice"),
         "-W", ".",
         "-u", uuid,
         fmt.Sprintf("--iosversion=%s", o.devd.iosVersion),

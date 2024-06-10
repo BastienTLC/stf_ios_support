@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/python3
 
 import json
 import os
@@ -73,5 +73,4 @@ else:
     if args.wdasource != 1:
       data["wda"] = wda_root["wda"]
 
-print json.dumps( data, indent = 2 )
 

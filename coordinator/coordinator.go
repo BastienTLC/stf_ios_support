@@ -375,7 +375,7 @@ func main() {
         baseProgs.okStage1 = true
     }
     
-    cleanup_procs( config )
+    //cleanup_procs( config )
 
     log.Debug("Starting ZMQ Pull")
     coro_zmqPull( runningDevs, &devMapLock, lineLog, pubEventCh, devEventCh )
@@ -833,9 +833,9 @@ func event_loop(
             if devd != nil && !devd.wdaStarted {
                 o.config = devd.confDup
                 
-                if !o.config.Video.Enabled ||
+                /*if !o.config.Video.Enabled ||
                     ( o.devd.okVidInterface == true && o.devd.okFirstFrame == true ) ||
-                    videoMethod == "app" {
+                    videoMethod == "app" {*/
                         o.devd.wdaStarted = true
                         
                         time.Sleep( time.Second * 2 )
@@ -850,7 +850,7 @@ func event_loop(
                         } ).Debug("IOS Version")
             
                         proc_wdaproxy( o, devEventCh, false )
-                }
+                //}
             }
         }
     }

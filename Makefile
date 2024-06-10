@@ -224,7 +224,6 @@ bin/wda/build_info.json: repos/WebDriverAgent repos/WebDriverAgent/WebDriverAgen
 	cd repos/WebDriverAgent && xcodebuild $(xcodebuildoptions1) $(XCODEOPS) $(xcodebuildoptions2) build-for-testing
 	$(eval PROD_PATH=$(shell ./get-wda-build-path.sh))
 	@if [ "$(PROD_PATH)" != "" ]; then cp -r $(PROD_PATH)/ bin/wda/; fi;
-	@if [ "$(PROD_PATH)" != "" ]; then ./get-version-info.sh --repo wda > bin/wda/build_info.json; fi;
 	@if [ "$(PROD_PATH)" == "" ]; then echo FAIL TO GET PRODUCTION PATH - you should rerun make; exit 1; fi;
 
 # --- WDAProxy ---
