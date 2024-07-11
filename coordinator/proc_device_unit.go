@@ -26,9 +26,9 @@ func proc_device_ios_unit( o ProcOptions, uuid string, curIP string) {
     secure := o.config.FrameServer.Secure
     var frameServer string
     if secure {
-        frameServer = fmt.Sprintf("wss://%s:%d/echo", curIP, o.devd.vidPort)
+        frameServer = fmt.Sprintf("wss://%s:%d/", curIP, o.devd.vidPort)
     } else {
-        frameServer = fmt.Sprintf("ws://%s:%d/echo", curIP, o.devd.vidPort)
+        frameServer = fmt.Sprintf("ws://%s:%d/", curIP, o.devd.vidPort)
     }
     
     curDir, _ := os.Getwd()
@@ -44,7 +44,7 @@ func proc_device_ios_unit( o ProcOptions, uuid string, curIP string) {
         "--public-ip"            , curIP,
         "--wda-port"             , strconv.Itoa( o.devd.wdaPort ),
         "--storage-url"          , fmt.Sprintf("https://%s", o.config.Stf.HostName),
-        "--screen-ws-url-pattern", fmt.Sprintf("wss://%s/frames/%s/%d/x", o.config.Stf.HostName, curIP, o.devd.vidPort),
+        "--screen-ws-url-pattern", fmt.Sprintf("wss://%s/d/%s/%d/", o.config.Stf.HostName, curIP, o.devd.vidPort),
         //"--screen-ws-url-pattern", frameServer,
         "--vnc-password"         , o.config.Video.VncPassword,
         "--vnc-port"             , strconv.Itoa( vncPort ),
