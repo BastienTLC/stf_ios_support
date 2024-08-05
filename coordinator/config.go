@@ -240,7 +240,7 @@ func read_config( configPath string ) *Config {
             "ios-deploy": "bin/ios-deploy"
           },
           "repos":{
-            "stf": "https://github.com/nanoscopic/stf-ios-provider.git",
+            "stf": "https://github.com/BastienTLC/stf-ios-provider.git",
             "wda": "https://github.com/nanoscopic/WebDriverAgent.git"
           },
           "timing":{

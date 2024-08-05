@@ -268,11 +268,11 @@ clone: repos/WebDriverAgent repos/osx_ios_device_trigger repos/stf-ios-provider 
 repos/stf-ios-provider/package.json: repos/stf-ios-provider
 
 repos/stf-ios-provider:
-	$(eval REPO=$(shell jq '.repo_stf // "https://github.com/nanoscopic/stf-ios-provider.git"' config.json -j))
+	$(eval REPO=$(shell jq '.repo_stf // "https://github.com/BastienTLC/stf-ios-provider.git"' config.json -j))
 	git clone $(REPO) repos/stf-ios-provider --branch master
 
 repos/ios_video_stream:
-	git clone https://github.com/nanoscopic/ios_video_stream.git repos/ios_video_stream
+	git clone https://github.com/BastienTLC/ios_video_stream.git repos/ios_video_stream
 
 repos/ios_video_pull:
 	git clone https://github.com/nanoscopic/ios_video_pull.git repos/ios_video_pull
